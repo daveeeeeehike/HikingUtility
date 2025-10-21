@@ -31,7 +31,7 @@ public class OfflineMapDownloader extends AppCompatActivity {
     private Button btnDownload;
     private OfflineManager offlineManager;
 
-    private static final String MAPTILER_KEY = "vOks4vjE4FYDiVJljUlu";
+    private static final String MAPTILER_KEY = "******";
     private final List<OfflineRegion> regions = new ArrayList<>();
 
     @Override
