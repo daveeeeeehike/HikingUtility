@@ -37,10 +37,10 @@ cd HikingUtility</code></pre>
 
     <li><strong>Add Your MapTiler API Key</strong>
       <p>Open the following files and replace the placeholder value:</p>
-      <pre><code>// MapActivity.java
+      <pre><code>&lt;!-- MapActivity.java --&gt;
 private static final String MAPTILER_KEY = "******";
 
-// OfflineMapDownloader.java
+&lt;!-- OfflineMapDownloader.java --&gt;
 private static final String MAPTILER_KEY = "******";
 </code></pre>
       <p>Replace <code>******</code> with your actual MapTiler key from <a href="https://cloud.maptiler.com/" target="_blank">https://cloud.maptiler.com/</a>.</p>
