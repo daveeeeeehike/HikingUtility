@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 36
+    namespace "com.dave.HikingUtilityApp"
+
+    defaultConfig {
+        applicationId "com.dave.HikingUtilityApp"
+        minSdkVersion 26
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Disable tests for Android IDE compatibility
+    testOptions {
+        unitTests.all {
+            enabled false
+        }
+    }
+}
+
+dependencies {
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.material
+    implementation libs.play.services.location
+    implementation 'org.maplibre.gl:android-sdk:11.13.5'
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.constraintlayout
+    implementation 'org.maplibre.gl:android-sdk-geojson:6.0.1'
+    implementation 'androidx.core:core-ktx:1.17.0'
+    implementation 'com.github.yukuku:ambilwarna:2.0.1'
+    implementation 'com.google.android.material:material:1.13.0'
+
+    // UI components
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.cardview
+    implementation libs.androidx.viewpager2
+}

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GPX Tracks"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Current Track Status -->
+        <TextView
+            android:id="@+id/tv_current_track"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚫ Not recording"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Track Statistics -->
+        <TextView
+            android:id="@+id/tv_track_stats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No track data"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="14sp"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="monospace" />
+
+        <!-- Recording Controls -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Track Recording"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btn_start_tracking"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Start Recording"
+                android:textSize="14sp"
+                android:background="#CC0000"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btn_stop_tracking"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Stop Recording"
+                android:textSize="14sp"
+                android:background="#333333"
+                android:textColor="#FFFFFF"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <!-- Track Management -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Track Management"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:id="@+id/btn_save_track"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Save Track to Downloads"
+            android:textSize="14sp"
+            android:background="#006600"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_view_on_map"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="View Track on Map"
+            android:textSize="14sp"
+            android:background="#0066CC"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_import_gpx"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Import GPX File"
+            android:textSize="14sp"
+            android:background="#333333"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Instructions -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 GPS Tracking Instructions:\n\n• Start Recording to log your hiking route\n• GPX files are saved to Downloads folder\n• Import existing GPX files from any hiking app\n• View tracks on topographic maps\n• Share tracks via email/messaging\n\n🔋 Tip: GPS tracking uses more battery"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="12sp"
+            android:lineSpacingMultiplier="1.2"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="12dp" />
+
+    </LinearLayout>
+
+</ScrollView>

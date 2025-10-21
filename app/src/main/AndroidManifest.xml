@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dave.HikingUtilityApp">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
+
+
+    <!-- Hardware features -->
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" />
+    <uses-feature android:name="android.hardware.sensor.compass" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <!-- Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- Waypoint Management Activity -->
+
+        <!-- GPX List Activity -->
+        <activity
+            android:name=".GPXListActivity"
+            android:exported="true"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+        <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.SEND"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="content"/>
+        <data android:scheme="file"/>
+        <data android:mimeType="application/gpx+xml"/>
+        <data android:mimeType="application/octet-stream"/>
+        </intent-filter>
+        </activity>
+        <!-- GPX Activity -->
+        <activity
+            android:name=".GPXActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Map Activity -->
+        <activity
+            android:name=".MapActivity"
+            android:screenOrientation="portrait" />
+
+
+        <!-- Background Service -->
+        <service android:name=".GPXTrackingService"
+            android:enabled="true"
+            android:exported="false"
+
+            android:foregroundServiceType="location"
+            />
+
+        <activity
+            android:name=".OfflineMapManager"
+            android:exported="false"
+            android:label="Offline Maps" />
+
+        <activity
+            android:name=".OfflineMapDownloader"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".TrackingActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.dave.HikingUtilityApp.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"><meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+
+            android:resource="@xml/file_path" />
+
+        </provider>
+
+    </application>
+</manifest>

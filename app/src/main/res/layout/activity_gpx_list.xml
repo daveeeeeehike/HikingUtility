@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="30dp">
+
+    <TextView
+        android:id="@+id/tv_track_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 GPX tracks found"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_import_gpx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Import GPX File"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="12dp"
+        app:backgroundTint="?attr/colorPrimary"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_import_osm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Import OSM Trace"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"
+        app:cornerRadius="12dp"
+        app:backgroundTint="?attr/colorPrimary"/>
+
+    <ListView
+        android:id="@+id/list_gpx_tracks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
+
+</ScrollView>
