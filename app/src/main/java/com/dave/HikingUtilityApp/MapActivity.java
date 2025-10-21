@@ -65,7 +65,7 @@ public class MapActivity extends AppCompatActivity implements LocationHelper.Loc
         // Map async setup
         mapView.getMapAsync(map -> {
             mapLibreMap = map;
-            String styleURL = "https://api.maptiler.com/maps/topo-v2/style.json?key=vOks4vjE4FYDiVJljUlu";
+            String styleURL = "https://api.maptiler.com/maps/topo-v2/style.json?key=" + MAPTILER_KEY;
             mapLibreMap.setStyle(new Style.Builder().fromUri(styleURL), style -> {
                 initGPXTrackLayer();
                 if (hasLocationPermission()) enableLocationComponent(style);
