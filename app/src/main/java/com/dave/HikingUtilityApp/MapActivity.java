@@ -49,6 +49,8 @@ public class MapActivity extends AppCompatActivity implements LocationHelper.Loc
 
     private boolean autoCentreEnabled = false;
 
+     private static final String MAPTILER_KEY = "******";
+
     // ================== LIFECYCLE ==================
     @Override
     protected void onCreate(Bundle savedInstanceState) {
